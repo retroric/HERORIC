@@ -1,0 +1,19 @@
+9000 ' =======================
+9001 ' = Peek Memory Utility =
+9002 ' =======================
+9010 PRINT "ENTER ADDRESS ('#' for hex): ";
+9020 INPUT A
+9030 PRINT HEX$(A); " = " ; HEX$(PEEK(A))
+9040 GOTO 9010
+9100 ' ==========================
+9001 ' = Scan HIRES Mem Utility =
+9002 ' ==========================
+9100 A=40960
+9110 FOR Y=0 TO 199
+9120 FOR COL=0 TO 39
+9130 PRINT "(Y=";Y;", COL=";COL;") [";HEX$(A)+"] = "; HEX$(PEEK(A));
+9140 A=A+1
+9150 REPEAT:UNTIL KEY$ <> ""
+9160 PRINT
+9170 NEXT COL
+9180 NEXT Y

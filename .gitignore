@@ -1,0 +1,4 @@
+# Exclude BUILD directory and all files within 
+# since these are binaries built through running OSDK
+# (running build.bat or execute.bat)
+BUILD/

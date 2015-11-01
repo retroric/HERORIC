@@ -1,0 +1,72 @@
+9990 ' ============================
+9993 ' = Draw HERO Rodoric Sprite =
+9995 ' =  (RUN from HIRES mode)   =
+9997 ' ============================
+10000 RESTORE
+10010 PRINT "X pos (0-37)":INPUT X%
+10020 PRINT "Y pos (0-28)":INPUT Y%
+10030 ' cellules de 6x6 => y=y*6
+10040 A=#A000+Y%*#6*#28+X% 
+10050 FORI=0TO23  
+10060 READ D:POKEA,D:A=A+1
+10070 READ D:POKEA,D:A=A+1
+10080 READ D:POKEA,D
+10090 A=A+#26
+10100 REM #26 et non #28 car on a
+10110 REM incremente A 2 fois deja
+10120 NEXTI
+10130 GOTO 10010
+14990 ' ============================
+14991 ' = Draw HERO Rodoric Sprite =
+14992 ' = ** optimised routine **  =
+14993 ' = NOT using INT vars cos   =
+14994 ' = all calcs are done in    =
+14995 ' = float arithmetics !!     =
+14996 ' =  (RUN from HIRES mode)   =
+14997 ' ============================
+15000 RESTORE
+15010 S=#A000:C=#6:L=#28:N=#26
+15020 PRINT "X pos (0-37)":INPUT X
+15030 PRINT "Y pos (0-28)":INPUT Y
+15040 ' cellules de 6x6 => y=y*6
+15050 A=S+Y*C*L+X 
+15060 FORI=0TO23  
+15070 READ D:POKEA,D:A=A+1
+15080 READ D:POKEA,D:A=A+1
+15090 READ D:POKEA,D
+15100 A=A+N%
+15110 REM #26 et non #28 car on a
+15120 REM incremente A 2 fois deja
+15130 NEXT
+15132 ' Do NOT specify loop variable 
+15134 ' for 'NEXT' as this slows the
+15136 ' programm unnecessarily
+15138 ' For Optimisation See:
+15139 ' ORIC A NU pp. 41-43
+15140 GOTO 15020
+20101 DATA #03,#7F,#70
+20102 DATA #03,#46,#40
+20103 DATA #03,#46,#40
+20104 DATA #01,#46,#4F
+20105 DATA #05,#46,#70
+20106 DATA #01,#46,#70
+20107 DATA #01,#46,#7F
+20108 DATA #01,#46,#4F
+20109 DATA #06,#7C,#7C
+20110 DATA #06,#7F,#7F
+20111 DATA #06,#7F,#4F
+20112 DATA #06,#7F,#4F
+20113 DATA #06,#4F,#4C
+20114 DATA #06,#4F,#43
+20115 DATA #07,#43,#7C
+20116 DATA #07,#40,#7C
+20117 DATA #07,#40,#7C
+20118 DATA #07,#40,#70
+20119 DATA #07,#40,#70
+20120 DATA #07,#43,#70
+20121 DATA #07,#43,#70
+20122 DATA #07,#43,#40
+20123 DATA #07,#43,#40
+20124 DATA #07,#43,#40
+
+

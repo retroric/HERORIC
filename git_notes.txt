@@ -1,0 +1,51 @@
+V:\EMULATION\ORIC\OSDK\OSDK_1_5\HERO>dir
+ Le volume dans le lecteur V s'appelle V_HD3_DATA3
+ Le numéro de série du volume est 7CEB-03F6
+
+ Répertoire de V:\EMULATION\ORIC\OSDK\OSDK_1_5\HERO
+
+25/09/2015  22:51    <REP>          .
+25/09/2015  22:51    <REP>          ..
+26/09/2015  01:59    <REP>          BUILD
+25/09/2015  22:51               575 build.bat
+25/09/2015  22:48               319 config.bat
+25/09/2015  22:51               544 execute.bat
+20/10/2015  03:00            13 407 hero.c
+25/09/2015  21:53             4 897 hero_routines.s
+08/10/2015  00:49    <REP>          Original maps
+22/11/2009  04:11               233 utils.s
+               6 fichier(s)           19 975 octets
+               4 Rép(s)  60 677 955 584 octets libres
+
+V:\EMULATION\ORIC\OSDK\OSDK_1_5\HERO>git init
+Initialized empty Git repository in V:/EMULATION/ORIC/OSDK/OSDK_1_5/HERO/.git/
+
+V:\EMULATION\ORIC\OSDK\OSDK_1_5\HERO>copy con .gitignore
+# Exclude BUILD directory and all files within
+# since these are binaries built through running OSDK
+# (running build.bat or execute.bat)
+BUILD/
+^Z
+        1 fichier(s) copié(s).
+
+V:\EMULATION\ORIC\OSDK\OSDK_1_5\HERO>git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .gitignore
+        Original maps/
+        build.bat
+        config.bat
+        execute.bat
+        hero.c
+        hero_routines.s
+        utils.s
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+V:\EMULATION\ORIC\OSDK\OSDK_1_5\HERO> notepad git_notes.txt
+
