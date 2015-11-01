@@ -49,3 +49,97 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 V:\EMULATION\ORIC\OSDK\OSDK_1_5\HERO> notepad git_notes.txt
 
+V:\EMULATION\ORIC\OSDK\OSDK_1_5\HERO>rem ###### First commit
+
+V:\EMULATION\ORIC\OSDK\OSDK_1_5\HERO>git add -A
+
+V:\EMULATION\ORIC\OSDK\OSDK_1_5\HERO>git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   .gitignore
+        new file:   Original maps/Animated bat and spider.png
+        new file:   Original maps/Bottom Dashboard.psp
+        new file:   Original maps/Bottom Logo Area.psp
+        new file:   Original maps/DRAW_HERO.txt
+        new file:   Original maps/DRAW_HERO_v2 - Copie.txt
+        new file:   Original maps/DRAW_HERO_v2.tap
+        new file:   Original maps/DRAW_HERO_v2.txt
+        new file:   Original maps/HERO - AIC sprites and tiles.pdn
+        new file:   Original maps/HERO - AIC sprites and tiles.png
+        new file:   Original maps/HERO - AIC sprites.xls
+        new file:   Original maps/HERO - In game with full interface.png
+        new file:   Original maps/HERO - Looking RIGHT - MODIFIED FOR ORIC.png
+        new file:   Original maps/HERO - Looking RIGHT - ORIGINAL.png
+        new file:   Original maps/HERO - sprites - Copie.xls
+        new file:   Original maps/HERO - sprites.xls
+        new file:   Original maps/HERO End of level X with Roderick standing.png
+        new file:   Original maps/HERO Legend - The Cast - Sprites.png
+        new file:   Original maps/Level 1 Full Map Title and Dashboard.psp
+        new file:   Original maps/Level 1 Full Map with 16x20 grid on 2nd layer.pdn
+        new file:   Original maps/Level 1 Full Map.psp
+        new file:   Original maps/Level 1 Screen 1 Map.psp
+        new file:   Original maps/Level 2 Full Map.png
+        new file:   Original maps/Level 8 Full Map.png
+        new file:   Original maps/PEEKMEM.txt
+        new file:   Original maps/Rodoric.tap
+        new file:   Original maps/Rodoric.txt
+        new file:   Original maps/Rodoric2.tap
+        new file:   Original maps/Rodoric2.txt
+        new file:   build.bat
+        new file:   config.bat
+        new file:   execute.bat
+        new file:   git_notes.txt
+        new file:   hero.c
+        new file:   hero_routines.s
+        new file:   utils.s
+
+
+V:\EMULATION\ORIC\OSDK\OSDK_1_5\HERO> rem ##### First Tag
+V:\EMULATION\ORIC\OSDK\OSDK_1_5\HERO> git commit -m "Initial commit"
+[master (root-commit) ae41802] Initial commit
+ 36 files changed, 1254 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 Original maps/Animated bat and spider.png
+ create mode 100644 Original maps/Bottom Dashboard.psp
+ create mode 100644 Original maps/Bottom Logo Area.psp
+ create mode 100644 Original maps/DRAW_HERO.txt
+ create mode 100644 Original maps/DRAW_HERO_v2 - Copie.txt
+ create mode 100644 Original maps/DRAW_HERO_v2.tap
+ create mode 100644 Original maps/DRAW_HERO_v2.txt
+ create mode 100644 Original maps/HERO - AIC sprites and tiles.pdn
+ create mode 100644 Original maps/HERO - AIC sprites and tiles.png
+ create mode 100644 Original maps/HERO - AIC sprites.xls
+ create mode 100644 Original maps/HERO - In game with full interface.png
+ create mode 100644 Original maps/HERO - Looking RIGHT - MODIFIED FOR ORIC.png
+ create mode 100644 Original maps/HERO - Looking RIGHT - ORIGINAL.png
+ create mode 100644 Original maps/HERO - sprites - Copie.xls
+ create mode 100644 Original maps/HERO - sprites.xls
+ create mode 100644 Original maps/HERO End of level X with Roderick standing.png
+ create mode 100644 Original maps/HERO Legend - The Cast - Sprites.png
+ create mode 100644 Original maps/Level 1 Full Map Title and Dashboard.psp
+ create mode 100644 Original maps/Level 1 Full Map with 16x20 grid on 2nd layer.pdn
+ create mode 100644 Original maps/Level 1 Full Map.psp
+ create mode 100644 Original maps/Level 1 Screen 1 Map.psp
+ create mode 100644 Original maps/Level 2 Full Map.png
+ create mode 100644 Original maps/Level 8 Full Map.png
+ create mode 100644 Original maps/PEEKMEM.txt
+ create mode 100644 Original maps/Rodoric.tap
+ create mode 100644 Original maps/Rodoric.txt
+ create mode 100644 Original maps/Rodoric2.tap
+ create mode 100644 Original maps/Rodoric2.txt
+ create mode 100644 build.bat
+ create mode 100644 config.bat
+ create mode 100644 execute.bat
+ create mode 100644 git_notes.txt
+ create mode 100644 hero.c
+ create mode 100644 hero_routines.s
+ create mode 100644 utils.s
+
+V:\EMULATION\ORIC\OSDK\OSDK_1_5\HERO> rem ##### First Tag
+V:\EMULATION\ORIC\OSDK\OSDK_1_5\HERO> git tag -a v0.0.1 -m "draft v0.0.1"
+
