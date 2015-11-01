@@ -155,3 +155,17 @@ V:\EMULATION\ORIC\OSDK\OSDK_1_5\HERO>git commit -m "Updated git_notes.txt"
 [master 4c7f689] Updated git_notes.txt
  1 file changed, 94 insertions(+)
 
+V:\EMULATION\ORIC\OSDK\OSDK_1_5\HERO>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   git_notes.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+V:\EMULATION\ORIC\OSDK\OSDK_1_5\HERO>git commit -a -m "Updated git_notes.txt"
+[master dbb5ff1] Updated git_notes.txt
+ 1 file changed, 12 insertions(+)
+
