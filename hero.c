@@ -244,7 +244,9 @@ void play_hero() {
 			draw_hero_hovering_rotor(x, y, xdir, 2);
 		}
 	  // CYCLE ROTOR ANIMATION
-	  rotor_anim_frame = (rotor_anim_frame + 1) % ROTOR_ANIM_FRAMES;
+	  rotor_anim_frame++;
+	  // MUCH quicker than using the modulo operator of course
+	  if(rotor_anim_frame == ROTOR_ANIM_FRAMES) rotor_anim_frame = 0; 
 	}
 }
 
@@ -253,17 +255,18 @@ void play_hero() {
 // ======================================================================
 void draw_hero_hovering_rotor(char xstart, char ystart, char xdir, char frame) {
 	unsigned char* curr_addr = (unsigned char *) row_start_addr[ystart] + xstart;
+	unsigned char *curr_sprite_addr;
 
 	if(xdir == XDIR_RIGHT) {
-		*curr_addr++ = ANIM_Hero_Rotor_Right[frame][0];
-		*curr_addr++ = ANIM_Hero_Rotor_Right[frame][1];
-		*curr_addr = ANIM_Hero_Rotor_Right[frame][2];
-	}	
+		curr_sprite_addr = &ANIM_Hero_Rotor_Right[frame][0];
+	}
 	else { // XDIR_LEFT
-		*curr_addr++ = ANIM_Hero_Rotor_Left[frame][0];
-		*curr_addr++ = ANIM_Hero_Rotor_Left[frame][1];
-		*curr_addr = ANIM_Hero_Rotor_Left[frame][2];
-	}	
+		curr_sprite_addr = &ANIM_Hero_Rotor_Left[frame][0];
+	}
+	// draw rotor sprite animation frame
+	*curr_addr++ = *curr_sprite_addr++;
+	*curr_addr++ = *curr_sprite_addr++;
+	*curr_addr =   *curr_sprite_addr;
 }
 
 // ======================================================================
@@ -284,11 +287,11 @@ void draw_hero_hovering_right(char xstart, char ystart, char skip_rotor) {
 //	}
 	
 	// draw 3x4 cell sprite: 1 column for colour attribute, 2 columns for sprite shape, times 4 rows = 4x6 = 24 lines
+	curr_sprite_addr = &SPRITE_Hero_Hovering_Right[line][0];
 	for(; line < 24; line++) {
-		curr_sprite_addr = &SPRITE_Hero_Hovering_Right[line][0];
 		*curr_addr++ = *curr_sprite_addr++;
 		*curr_addr++ = *curr_sprite_addr++;
-		*curr_addr   = *curr_sprite_addr;
+		*curr_addr   = *curr_sprite_addr++;
 		curr_addr += 38; /* 38 = 40-2 (already incremented pointer twice): offset for start of xcell on next line */
 	}
 	
@@ -315,11 +318,11 @@ void draw_hero_hovering_left(char xstart, char ystart, char skip_rotor) {
 //	}
 	
 	// draw 3x4 cell sprite: 1 column for colour attribute, 2 columns for sprite shape, times 4 rows = 4x6 = 24 lines
+	curr_sprite_addr = &SPRITE_Hero_Hovering_Left[line][0];
 	for(; line < 24; line++) {
-		curr_sprite_addr = &SPRITE_Hero_Hovering_Left[line][0];
 		*curr_addr++ = *curr_sprite_addr++;
 		*curr_addr++ = *curr_sprite_addr++;
-		*curr_addr   = *curr_sprite_addr;
+		*curr_addr   = *curr_sprite_addr++;
 		curr_addr += 38; /* 38 = 40-2 (already incremented pointer twice): offset for start of xcell on next line */
 	}
 	// Animate rotor (play 2 last frames)
