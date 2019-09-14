@@ -270,10 +270,11 @@ void draw_hero_hovering_rotor(char xstart, char ystart, char xdir, char frame) {
 // Draw HERO hovering right
 // ======================================================================
 void draw_hero_hovering_right(char xstart, char ystart, char skip_rotor) {
-	// ATTENTION, COMPILATEUR POURRAVE: **toutes** les déclarations de variables
+	// ATTENTION,  **toutes** les déclarations de variables
 	// doivent être effectuées AVANT d'entrer la MOINDRE instruction !!!!
 	
-	unsigned char* curr_addr = (unsigned char *) row_start_addr[ystart] + xstart;
+	unsigned char *curr_addr = (unsigned char *) row_start_addr[ystart] + xstart;
+	unsigned char *curr_sprite_addr;
 	char line = 0;
 
 //	if(skip_rotor) {
@@ -284,10 +285,11 @@ void draw_hero_hovering_right(char xstart, char ystart, char skip_rotor) {
 	
 	// draw 3x4 cell sprite: 1 column for colour attribute, 2 columns for sprite shape, times 4 rows = 4x6 = 24 lines
 	for(; line < 24; line++) {
-		*curr_addr++ = SPRITE_Hero_Hovering_Right[line][0];
-		*curr_addr++ = SPRITE_Hero_Hovering_Right[line][1];
-		*curr_addr   = SPRITE_Hero_Hovering_Right[line][2]; 
-		curr_addr+=38; /* 38 = 40-2 (already incremented pointer twice): offset for start of xcell on next line */
+		curr_sprite_addr = &SPRITE_Hero_Hovering_Right[line][0];
+		*curr_addr++ = *curr_sprite_addr++;
+		*curr_addr++ = *curr_sprite_addr++;
+		*curr_addr   = *curr_sprite_addr;
+		curr_addr += 38; /* 38 = 40-2 (already incremented pointer twice): offset for start of xcell on next line */
 	}
 	
 	// Animate rotor (play 2 last frames)
@@ -299,10 +301,11 @@ void draw_hero_hovering_right(char xstart, char ystart, char skip_rotor) {
 // Draw HERO hovering left
 // ======================================================================
 void draw_hero_hovering_left(char xstart, char ystart, char skip_rotor) {
-	// ATTENTION, COMPILATEUR POURRAVE: **toutes** les déclarations de variables
+	// ATTENTION, **toutes** les déclarations de variables
 	// doivent être effectuées AVANT d'entrer la mOINDRE instruction !!!!
 	
 	unsigned char* curr_addr = (unsigned char *) row_start_addr[ystart] + xstart;
+	unsigned char *curr_sprite_addr;
 	char line = 0;
 
 //	if(skip_rotor) {
@@ -313,10 +316,11 @@ void draw_hero_hovering_left(char xstart, char ystart, char skip_rotor) {
 	
 	// draw 3x4 cell sprite: 1 column for colour attribute, 2 columns for sprite shape, times 4 rows = 4x6 = 24 lines
 	for(; line < 24; line++) {
-		*curr_addr++ = SPRITE_Hero_Hovering_Left[line][0];
-		*curr_addr++ = SPRITE_Hero_Hovering_Left[line][1];
-		*curr_addr   = SPRITE_Hero_Hovering_Left[line][2]; 
-		curr_addr+=38; /* 38 = 40-2 (already incremented pointer twice): offset for start of xcell on next line */
+		curr_sprite_addr = &SPRITE_Hero_Hovering_Left[line][0];
+		*curr_addr++ = *curr_sprite_addr++;
+		*curr_addr++ = *curr_sprite_addr++;
+		*curr_addr   = *curr_sprite_addr;
+		curr_addr += 38; /* 38 = 40-2 (already incremented pointer twice): offset for start of xcell on next line */
 	}
 	// Animate rotor (play 2 last frames)
 	draw_hero_hovering_rotor(xstart, ystart, XDIR_LEFT, 1);
