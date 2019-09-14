@@ -145,6 +145,7 @@ void play_hero();
 
 
 void main() {
+	//asm("brk"); // attempt to debug "crash to monitor at PC=00E5" with OSDK1.15 and OSDKCOMP=-O3
 	//test_keys();
 	play_hero();
 }
@@ -184,6 +185,7 @@ void play_hero() {
 	unsigned char key      = NO_KEY; // 0x38 = NO KEY PRESSED
 
 	hires();
+	
 	draw_hero_hovering_right(x, y, 1);  // DRAW SPRITE at initial position
 
 	 for(; key != KEY_SPACE;) {
